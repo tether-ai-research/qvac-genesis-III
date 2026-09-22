@@ -1,0 +1,53 @@
+# Sample evaluation configuration.
+#
+# `models` lists the candidates to evaluate. The entry below is one of the
+# Genesis III paper checkpoints; replace it or add more entries, one per
+# model. Select which configured models to run with:
+#
+#   ./run.sh --models <comma-separated ID substrings>
+#
+# `id` accepts any Hugging Face model ID or a local checkpoint path.
+# `revision` pins an exact Hub commit: optional, but recommended so that
+# runs are not affected by later uploads to the model repository.
+models:
+  - id: qvac/qvac-genesis-iii-qwen3-1.7b-combined
+    revision: 3d4f30ee6381f1a0a17c7dee8c7aa1757f8d1645
+
+# Benchmark groups to evaluate on (see opencompass_configs/datasets/).
+# Validate the setup first with the two-example smoke group:
+#
+#   ./run.sh --datasets smoke
+benchmarks:
+  - mmlu_genesis_stem
+  - arc_challenge
+  - arc_easy
+  - gpqa_diamond
+smoke_benchmarks:
+  - smoke
+
+# Candidate generation: greedy decoding of free-form responses.
+generation:
+  temperature: 0.0
+  max_input_tokens: 4096
+  max_output_tokens: 256
+
+# LLM-as-a-parser judge: extracts one final answer from each response.
+judge:
+  model: opencompass/CompassJudger-2-32B-Instruct
+  revision: 1e586e14ba945e073fb60d73e91ce798e323341c
+  temperature: 0.01
+  max_input_tokens: 32768
+  max_output_tokens: 4096
+
+# vLLM serving and request scheduling. The defaults match the paper's
+# 8x80 GB GPU node; reduce the tensor-parallel sizes for smaller setups.
+runtime:
+  candidate_port: 5000
+  judge_port: 4000
+  candidate_tensor_parallel_size: 8
+  judge_tensor_parallel_size: 8
+  gpu_memory_utilization: 0.85
+  candidate_workers: 4096
+  judge_workers: 2048
+  query_per_second: 256
+  transformers_batch_size: 1

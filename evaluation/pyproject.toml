@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genesis-iii-eval"
+version = "0.1.0"
+description = "OpenCompass extension for the QVAC Genesis III evaluation"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = ["PyYAML>=6.0,<7"]
+
+[tool.setuptools.packages.find]
+include = ["genesis_iii_eval*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

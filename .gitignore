@@ -1,0 +1,13 @@
+.venv*/
+evaluation/vendor/
+evaluation/outputs/
+evaluation/logs/*
+!evaluation/logs/.gitignore
+evaluation/.run-state.*
+evaluation/.pytest_cache/
+**/__pycache__/
+*.egg-info/
+*.out
+*.err
+reproduced_metrics.json
+reproduction_comparison.json

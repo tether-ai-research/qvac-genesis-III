@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use Genesis III in your research, please cite the paper below."
+title: "QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pre-Training"
+authors:
+  - given-names: Davide
+    family-names: Vitabile
+  - given-names: Nikhil
+    family-names: Ranjan
+  - given-names: Akshay
+    family-names: Nambiar
+  - given-names: "Kamal Kumar"
+    family-names: Gupta
+  - given-names: Amril
+    family-names: Nazir
+preferred-citation:
+  type: generic
+  title: "QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pre-Training"
+  authors:
+    - given-names: Davide
+      family-names: Vitabile
+    - given-names: Nikhil
+      family-names: Ranjan
+    - given-names: Akshay
+      family-names: Nambiar
+    - given-names: "Kamal Kumar"
+      family-names: Gupta
+    - given-names: Amril
+      family-names: Nazir
+  year: 2026
+  url: "https://arxiv.org/abs/2609.19513"
+  institution:
+    name: "Tether Data, S.A. de C.V. d.b.a. Tether AI Research"
+  notes: "Accepted at the Conference on Language Modeling (COLM) 2026"

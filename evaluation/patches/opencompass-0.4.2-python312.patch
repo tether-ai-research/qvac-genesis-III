@@ -1,0 +1,22 @@
+diff --git a/requirements/runtime.txt b/requirements/runtime.txt
+index 6bd5e9a..9bf8341 100644
+--- a/requirements/runtime.txt
++++ b/requirements/runtime.txt
+@@ -17,14 +17,14 @@ json5
+ jsonlines
+ mmengine-lite
+ nltk>=3.7
+-numpy>=1.23.4,<2.0.0
++numpy>=1.23.4
+ openai
+ OpenCC
+ opencv-python-headless
+-pandas<2.0.0
++pandas>=2.0.0
+ prettytable
+ protobuf
+-pyext
++# pyext omitted: unused by Genesis III and incompatible with Python 3.12
+ python-Levenshtein
+ rank_bm25==0.2.2
+ rapidfuzz

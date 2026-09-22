@@ -1,0 +1,1 @@
+"""Genesis III OpenCompass configurations."""
